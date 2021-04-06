@@ -1,0 +1,62 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="bannerslider scrollslider" data-pos="0">
+        <div class="bannerslider__inner scrollslider__inner">
+            <f:if condition="{files}">
+                <f:for each="{files}" as="file" iteration="iterator">
+                    <div class="bannerslider__item">
+                        <div class="banner__image__wrap">
+                            <div class="banner__image{f:if(condition:'{file.properties.image_alignment_horizontal}', then: ' banner__image--{file.properties.image_alignment_horizontal}')}{f:if(condition:'{file.properties.image_alignment_vertical}', then: ' banner__image--{file.properties.image_alignment_vertical}')}" style="background-image: url({f:uri.image(image:file, maxWidth: '2000')})" id="banner__image--{iterator.cycle}">
+                                <f:image
+                                    class="visuallyhidden"
+                                    image="{file}"
+                                    maxWidth="2000"
+                                    alt="{file.alternative}"
+                                    treatIdAsReference="1"
+                                    title="{file.title}" />
+                            </div>
+                        </div>
+                        <f:if condition="{file.properties.link}">
+                            <f:link.typolink class="banner__link" parameter="{file.properties.link}" title="{file.title}"><span class="visuallyhidden">{file.title}</span></f:link.typolink>
+                        </f:if>
+                        <div class="banner__text">
+                            <f:if condition="{file.properties.banner_text}">
+                                <f:then>
+                                    <f:format.html>{file.properties.banner_text}</f:format.html>
+                                </f:then>
+                                <f:else>
+                                    <f:format.html>{data.bodytext}</f:format.html>
+                                </f:else>
+                            </f:if>
+                        </div>
+                    </div>
+                </f:for>
+            </f:if>
+        </div>
+        <f:if condition="{f:count(subject:files)} > 1">
+            <nav class="bannerslider__dots scrollslider__dots">
+                <ul class="bannerslider__dots__list scrollslider__dots__list">
+                    <f:for each="{files}" as="file" iteration="iterator">
+                        <li class="bannerslider__dots__item scrollslider__dots__item{f:if(condition:iterator.isFirst, then: ' scrollslider__dots__item--active')}">
+                            <span class="bannerslider__dots__item__number">{iterator.cycle}</span>
+                            <span class="visuallyhidden">{file.title}</span>
+                        </li>
+                    </f:for>
+                </ul>
+            </nav>
+            <nav class="bannerslider__arrows scrollslider__nav">
+                <ul class="bannerslider__arrows__list">
+                    <li class="bannerslider__arrows__item scrollslider__btn scrollslider__btn--prev">
+                        <span class="far fa-long-arrow-left"></span>
+                    </li>
+                    <li class="bannerslider__arrows__item scrollslider__btn scrollslider__btn--next">
+                        <span class="far fa-long-arrow-right"></span>
+                    </li>
+                </ul>
+            </nav>
+        </f:if>
+    </div>
+</f:section>

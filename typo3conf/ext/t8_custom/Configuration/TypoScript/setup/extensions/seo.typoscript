@@ -1,0 +1,45 @@
+## add the following code in site config.yaml to be able to call the sitemap via /sitemap.xml
+## Attention: all other pagetypes must be defined if PageTypeSuffix-RouteEnhancer is used. otherwise they will not work anymore -> search for typeNum in Typoscript-Template and map them all.
+#routeEnhancers:
+#  PageTypeSuffix:
+#    type: PageType
+#    map:
+#      sitemap.xml: 1533906435
+
+plugin.tx_seo {
+    config {
+        xmlSitemap {
+            sitemaps {
+                pages {
+                    config {
+                        excludedDoktypes = 137, 138, 254, 255, 199
+                        additionalWhere = AND (no_index = 0 OR no_follow = 0)
+                    }
+                }
+                # Sitemap for Records like news
+                #news {
+                #    provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+                #    config {
+                #        table = tx_news_domain_model_news
+                #        sortField = sorting
+                #        lastModifiedField = tstamp
+                #        # Folder
+                #        pid = 33
+                #        url {
+                #            # detail pid
+                #            pageId = 35
+                #            fieldToParameterMap {
+                #                uid = tx_news_pi1[news]
+                #            }
+                #            additionalGetParameters {
+                #                tx_news_pi1.controller = News
+                #                tx_news_pi1.action = detail
+                #            }
+                #            useCacheHash = 1
+                #        }
+                #    }
+                #}
+            }
+        }
+    }
+}

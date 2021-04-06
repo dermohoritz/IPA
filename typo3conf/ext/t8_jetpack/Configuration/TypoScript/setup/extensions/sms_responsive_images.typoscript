@@ -1,0 +1,7 @@
+# change default path of sms_responsive_images to number 10 to be able to overwrite it
+lib.contentElement {
+	partialRootPaths {
+		1579774724 >
+		10 = EXT:sms_responsive_images/Resources/Private/Extensions/fluid_styled_content/Partials/
+	}
+}

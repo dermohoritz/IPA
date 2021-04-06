@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+   <file source-language="en" datatype="plaintext" target-language="fr" original="messages" date="2017-05-18T18:44:59Z" product-name="t8_jetpack">
+      <header/>
+      <body>
+        <trans-unit id="dateFormat">
+            <source>%Y/%m/%d</source>
+            <target>%d.%m.%Y</target>
+        </trans-unit>
+        <trans-unit id="dateFormatLong">
+            <source>%B %d, %Y</source>
+            <target>%d. %B %Y</target>
+        </trans-unit>
+        <trans-unit id="home">
+            <source>Home</source>
+            <target>Home</target>
+        </trans-unit>
+        <trans-unit id="toTop">
+            <source>To Top</source>
+            <target>en haut de la page</target>
+        </trans-unit>
+        <trans-unit id="filesSelected">
+            <source>files selected</source>
+            <target>fichiers sélectionnés</target>
+        </trans-unit>
+        <trans-unit id="newsRelatedHeading">
+            <source>Similar News</source>
+            <target>Nouvelles similaires</target>
+        </trans-unit>
+
+        <trans-unit id="tca.showPagetitleInFrontend">
+            <source>Show page title in frontend</source>
+            <target>Afficher le titre de la page dans le front-end</target>
+        </trans-unit>
+        <trans-unit id="tca.pagetitleAlignment">
+            <source>Alignment (page title)</source>
+            <target>Alignement (titre de la page)</target>
+        </trans-unit>
+        <trans-unit id="tca.horizontalOrientation">
+            <source>Horizontal orientation</source>
+            <target>Orientation horizontal</target>
+        </trans-unit>
+        <trans-unit id="tca.verticalOrientation">
+            <source>Vertical orientation</source>
+            <target>Orientation verticale</target>
+        </trans-unit>
+        <trans-unit id="tca.bannerText">
+            <source>Bannertext</source>
+            <target>Texte de la bannière</target>
+        </trans-unit>
+        <trans-unit id="tca.visualPresentationHeading">
+            <source>Visual presentation heading</source>
+            <target>Représentation visuelle Intitulé</target>
+        </trans-unit>
+        <trans-unit id="tca.visualPresentationHeading.same">
+            <source>Default (Same)</source>
+            <target>Standard (égal)</target>
+        </trans-unit>
+        <trans-unit id="tca.visualPresentationHeading.h1">
+            <source>like Heading 1</source>
+            <target>comme titre 1</target>
+        </trans-unit>
+        <trans-unit id="tca.visualPresentationHeading.h2">
+            <source>like Heading 2</source>
+            <target>comme titre 2</target>
+        </trans-unit>
+        <trans-unit id="tca.visualPresentationHeading.h3">
+            <source>like Heading 3</source>
+            <target>comme titre 3</target>
+        </trans-unit>
+        <trans-unit id="tca.visualPresentationHeading.h4">
+            <source>like Heading 4</source>
+            <target>comme titre 4</target>
+        </trans-unit>
+        <trans-unit id="tca.visualPresentationHeading.h5">
+            <source>like Heading 5</source>
+            <target>comme titre 5</target>
+        </trans-unit>
+        <trans-unit id="tca.visualPresentationHeading.h6">
+            <source>like Heading 6</source>
+            <target>comme titre 6</target>
+        </trans-unit>
+        <trans-unit id="tca.visualPresentationHeading.hidden">
+            <source>Hidden</source>
+            <target>caché</target>
+        </trans-unit>
+        <trans-unit id="tca.hyphenationForTitle">
+            <source>Hyphenation for title</source>
+            <target>Césure pour le titre</target>
+        </trans-unit>
+        <trans-unit id="tca.forcedImageRatio">
+            <source>Forced image ratio</source>
+            <target>Rapport d'image forcé</target>
+        </trans-unit>
+        <trans-unit id="tca.ceBanner">
+            <source>Banner</source>
+            <target>Bannière</target>
+        </trans-unit>
+        <trans-unit id="tca.ceBanner.text">
+            <source>Banner text general (apply to all images)</source>
+            <target>Texte de la bannière général (s'applique à toutes les images)</target>
+        </trans-unit>
+
+        <trans-unit id="tceform.headerLayout.label">
+            <source>Type (hierarchically logical assignment)</source>
+            <target>Type (affectation hiérarchique logique)</target>
+        </trans-unit>
+        <trans-unit id="tceform.headerLayout.h1">
+            <source>Title 1</source>
+            <target>Titre 1</target>
+        </trans-unit>
+        <trans-unit id="tceform.headerLayout.h2">
+            <source>Title 2</source>
+            <target>Titre 2</target>
+        </trans-unit>
+        <trans-unit id="tceform.headerLayout.h3">
+            <source>Title 3</source>
+            <target>Titre 3</target>
+        </trans-unit>
+        <trans-unit id="tceform.headerLayout.h4">
+            <source>Title 4</source>
+            <target>Titre 4</target>
+        </trans-unit>
+        <trans-unit id="tceform.headerLayout.h5">
+            <source>Title 5</source>
+            <target>Titre 5</target>
+        </trans-unit>
+        <trans-unit id="tceform.headerLayout.h6">
+            <source>Title 6</source>
+            <target>Titre 6</target>
+        </trans-unit>
+        <trans-unit id="tceform.contentLayout.label">
+            <source>Content-Width</source>
+            <target>Largeur de l'élément</target>
+        </trans-unit>
+        <trans-unit id="tceform.contentLayout.value1">
+            <source>full width</source>
+            <target>pleine largeur</target>
+        </trans-unit>
+        <trans-unit id="tceform.contentLayout.value3">
+            <source>full width, keep column-paddings on left &amp; right side</source>
+            <target>largeur totale, espacement des colonnes à gauche &amp; garder à droite</target>
+        </trans-unit>
+        <trans-unit id="tceform.contentLayout.value5">
+            <source>smaller content width</source>
+            <target>contenu plus étroit</target>
+        </trans-unit>
+        <trans-unit id="tceform.background.label">
+            <source>Background</source>
+            <target>Couleur du fond</target>
+        </trans-unit>
+        <trans-unit id="tceform.padding.more">
+            <source>more padding</source>
+            <target>plus</target>
+        </trans-unit>
+        <trans-unit id="tceform.padding.less">
+            <source>less padding</source>
+            <target>moins</target>
+        </trans-unit>
+        <trans-unit id="tceform.pageSubtitle.label">
+            <source>Subtitle (if set, the subtitle is displayed in the frontend instead of page titles)</source>
+            <target>Sous-titre (s'il est défini, le sous-titre est affiché dans le front-end au lieu du titre de la page).</target>
+        </trans-unit>
+        <trans-unit id="tceform.pageMetadescription.label">
+            <source>Meta description (is inherited by all subpages)</source>
+            <target>Meta description (sera héritée par toutes les sous-pages)</target>
+        </trans-unit>
+        <trans-unit id="tceform.imageWidth100.label">
+            <source>Force image width to 100%</source>
+            <target>Forcer la largeur de l'image à 100%</target>
+        </trans-unit>
+        <trans-unit id="tceform.powermail.css.value3">
+            <source>width 25%</source>
+            <target>25% Largeur</target>
+        </trans-unit>
+        <trans-unit id="tceform.powermail.css.value4">
+            <source>width 33%</source>
+            <target>33% Largeur</target>
+        </trans-unit>
+        <trans-unit id="tceform.powermail.css.value6">
+            <source>width 50%</source>
+            <target>50% Largeur</target>
+        </trans-unit>
+        <trans-unit id="tceform.powermail.css.value8">
+            <source>width 66%</source>
+            <target>66% Largeur</target>
+        </trans-unit>
+
+        <trans-unit id="flexform.gridelements.sheetTitle.layout">
+            <source>Layout</source>
+            <target>Présentation</target>
+        </trans-unit>
+        <trans-unit id="flexform.gridelements.layout.verticalAlignment">
+            <source>Vertical alignment of the content</source>
+            <target>Alignement vertical du contenu</target>
+        </trans-unit>
+        <trans-unit id="flexform.gridelements.layout.verticalAlignment.center">
+            <source>Center</source>
+            <target>Centré</target>
+        </trans-unit>
+        <trans-unit id="flexform.gridelements.layout.verticalAlignment.bottom">
+            <source>Bottom</source>
+            <target>Ci-dessous</target>
+        </trans-unit>
+        <trans-unit id="flexform.gridelements.layout.verticalAlignment.top">
+            <source>Top</source>
+            <target>Top</target>
+        </trans-unit>
+        <trans-unit id="flexform.gridelements.gridRemoveGaps">
+            <source>Remove gaps between columns</source>
+            <target>Supprimer les espaces entre les colonnes</target>
+        </trans-unit>
+        <trans-unit id="flexform.gridelements.reverseOrderIfWrapped">
+            <source>Reverse order if columns are wrapped (eg. right column will be on top when its wrapped [Tablet,Mobile])</source>
+            <target>Ordre inverse si les colonnes sont emballées (par exemple, colonne de droite en haut lors de l'emballage [Tablet,Mobile])</target>
+        </trans-unit>
+      </body>
+   </file>
+</xliff>

@@ -1,0 +1,18 @@
+// Vendor CSS
+@import "variables";
+@import "../vendor/normalize-scss/sass/normalize";
+@include normalize();
+@import "../../../../../t8_jetpack/Resources/Public/JavaScript/vendor/plyr-3.5.7/src/sass/plyr";
+
+@import "../vendor/fontawesome-5.12.1/scss/fontawesome.scss";
+@import "../vendor/fontawesome-5.12.1/scss/regular.scss";
+@import "../vendor/fontawesome-5.12.1/scss/light.scss";
+@import "../vendor/fontawesome-5.12.1/scss/brands.scss";
+
+// Terminal8 specific files
+@import "../../../../../t8_jetpack/Resources/Public/CSS/src/t8-grid";
+@import "../../../../../t8_jetpack/Resources/Public/CSS/src/jetpack";
+@import "custom";
+@import "modules";
+@import "responsive";
+@import "print";

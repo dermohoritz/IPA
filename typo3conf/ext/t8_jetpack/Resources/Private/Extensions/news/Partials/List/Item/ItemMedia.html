@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:comment>
+<!--
+	=====================
+		Partials/List/ItemMedia.html
+-->
+</f:comment>
+
+	<n:link class="news-list__image-link" newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+		<f:alias map="{mediaElement: '{newsItem.mediaPreviews.0}'}">
+			<f:if condition="{mediaElement.originalResource.type} == 2">
+				<f:image class="news-list__image" image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}"
+				width="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}c"
+				maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"
+				height="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}c" />
+			</f:if>
+			<f:if condition="{mediaElement.originalResource.type} == 4">
+				<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+			</f:if>
+			<f:if condition="{mediaElement.originalResource.type} == 5">
+				<f:image class="news-list__image" image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}"
+				width="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}c"
+				maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"
+				height="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}c" />
+			</f:if>
+		</f:alias>
+	</n:link>
+</html>

@@ -1,0 +1,18 @@
+page {
+	meta {
+		viewport = width=device-width, initial-scale=1
+		#author = Terminal8 GmbH, Bern, www.terminal8.ch
+	}
+}
+
+# Hinweis:
+# Damit die Description auf diese Weise vererbt wird,
+# muss im Installtool unter ['FE']['addRootLineFields'] der Wert
+# 'description' vorhanden sein. Dies ist standardmässig nicht der Fall. (t8_jetpack macht das in ext_localconf.php)
+[request.getQueryParams()['tx_news_pi1'] && request.getQueryParams()['tx_news_pi1']['news'] > 0 || request.getParsedBody()['tx_news_pi1'] && request.getParsedBody()['tx_news_pi1']['news'] > 0]
+	# andere description für news detailseite -> in news Template
+[else]
+	page.meta.description.data = levelfield:-1, description, slide
+[end]
+lib.standardDescription = TEXT
+lib.standardDescription.data = levelfield:-1, description, slide

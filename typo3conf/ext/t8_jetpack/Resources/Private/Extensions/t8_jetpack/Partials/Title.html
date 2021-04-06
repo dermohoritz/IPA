@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+	<f:if condition="{project_detail_title}">
+		<f:then>
+			<f:if condition="{project_detail_title} != 'IN_DETAIL_TEMPLATE'">
+				<f:then>
+					<div class="container container--pagetitle">
+						<h1 class="heading project-detail__page-title heading--page{f:if(condition:'{data.tx_t8jetpack_showpagetitle}', else:' visuallyhidden')}{f:if(condition:'{data.tx_t8jetpack_pagetitlealignment}', then:' {data.tx_t8jetpack_pagetitlealignment}')}">
+							{project_detail_title}
+						</h1>
+					</div>
+				</f:then>
+				<f:else>
+					<f:comment>H1 in Detailview</f:comment>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:if condition="{news_detail_title}">
+				<f:then>
+					<f:if condition="{news_detail_title} != 'IN_DETAIL_TEMPLATE'">
+						<f:then>
+							<div class="container container--pagetitle">
+								<h1 class="heading news-detail__page-title heading--page{f:if(condition:'{data.tx_t8jetpack_showpagetitle}', else:' visuallyhidden')}{f:if(condition:'{data.tx_t8jetpack_pagetitlealignment}', then:' {data.tx_t8jetpack_pagetitlealignment}')}">
+									{news_detail_title}
+								</h1>
+							</div>
+						</f:then>
+						<f:else>
+							<f:comment>H1 in Detailview</f:comment>
+						</f:else>
+					</f:if>
+				</f:then>
+				<f:else>
+					<f:if condition="{data.subtitle}">
+						<f:then>
+							<div class="container container--pagetitle">
+								<h1 class="heading heading--page{f:if(condition:'{data.tx_t8jetpack_showpagetitle}', else:' visuallyhidden')}{f:if(condition:'{data.tx_t8jetpack_pagetitlealignment}', then:' {data.tx_t8jetpack_pagetitlealignment}')}">
+									{data.subtitle}
+								</h1>
+							</div>
+						</f:then>
+						<f:else>
+							<div class="container container--pagetitle">
+								<h1 class="heading heading--page{f:if(condition:'{data.tx_t8jetpack_showpagetitle}', else:' visuallyhidden')}{f:if(condition:'{data.tx_t8jetpack_pagetitlealignment}', then:' {data.tx_t8jetpack_pagetitlealignment}')}">
+									{data.title}
+								</h1>
+							</div>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</html>

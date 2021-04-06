@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <div class="header__main no-hyphenation">
+        <div class="header__top">
+            <div class="header__meta">
+                <ul class="navigation navigation__meta">
+                    <f:for each="{navigationMeta}" as="navigationMetaItem" iteration="iterator">
+                        <f:render partial="Header/Navigation/Elements/MetaItem" arguments="{item:navigationMetaItem,pid:data.uid,showArrows:'no'}"/>
+                    </f:for>
+                </ul>
+            </div>
+    
+            <div class="header__lang">
+                <f:render partial="Header/Navigation/Language" arguments="{navigationLanguage:navigationLanguage,pid:data.uid}" />
+            </div>
+        </div>
+        
+        <div class="header__logo">
+            <f:link.page pageUid="{homePid}" title="{f:translate(key:'LLL:EXT:t8_jetpack/Resources/Private/Language/locallang.xlf:home')} {siteName}" class="header__logo-link"><span class="visuallyhidden"><f:translate key="LLL:EXT:t8_jetpack/Resources/Private/Language/locallang.xlf:home" /></span><img class="header__logo__img" src="{siteLogo}" alt="Logo {siteName}"  /></f:link.page>
+        </div>
+        <div class="navigations" id="navigation" data-sitename="{siteName}">
+            <div class="navigation__main">
+                <f:render partial="Header/Navigation/Main" arguments="{navigationMain:navigationMain,pid:data.uid}" />
+            </div>
+            <div class="navigation__mobile">
+                <f:render partial="Header/Navigation/Mobile" arguments="{_all}" />
+            </div>
+        </div>
+    </div>
+</html>

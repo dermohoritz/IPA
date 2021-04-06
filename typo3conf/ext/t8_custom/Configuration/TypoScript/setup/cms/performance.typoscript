@@ -1,0 +1,4 @@
+#config {
+	#compressCss = 1
+	#compressJs = 1
+#}

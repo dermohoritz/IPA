@@ -1,0 +1,8 @@
+page.includeCSS {
+    bundle = {$cssBundlePath}
+    bundle.outputfile = {$cssOutputPath}
+    bundle.sourceMap = true
+    bundle.linenumber = true
+    bundle.formatter = WapplerSystems\WsScss\Formatter\Autoprefixer
+    #bundle.formatter = ScssPhp\ScssPhp\Formatter\Expanded
+}

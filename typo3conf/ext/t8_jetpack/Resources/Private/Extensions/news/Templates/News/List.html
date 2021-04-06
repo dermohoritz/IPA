@@ -1,0 +1,58 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="General" />
+
+<f:comment>
+<!--
+	=====================
+		Templates/News/List.html
+-->
+</f:comment>
+
+<f:section name="content">
+
+	<!--TYPO3SEARCH_end-->
+	<f:if condition="{news}">
+		<f:then>
+			<f:switch expression="{settings.templateLayout}">
+				<f:defaultCase>
+					<div class="content news-list">
+						<f:if condition="{settings.hidePagination}">
+							<f:then>
+								<f:for each="{news}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item" arguments="{newsItem:newsItem,settings:settings,iterator:iterator,contentObjectData:contentObjectData,selectedCategory:overwriteDemand.categories,col:'col4 col-medium-6 col-small-12'}" />
+								</f:for>
+							</f:then>
+							<f:else>
+								<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+									<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+										<f:render partial="List/Item" arguments="{newsItem:newsItem,settings:settings,iterator:iterator,contentObjectData:contentObjectData,selectedCategory:overwriteDemand.categories}" />
+									</f:for>
+								</n:widget.paginate>
+							</f:else>
+						</f:if>
+						<f:if condition="{settings.listPid} != {contentObjectData.pid}">
+							<div class="news-list__morenews">
+								<f:link.page pageUid="{settings.listPid}" class="button"><f:translate key="LLL:EXT:t8_custom/Resources/Private/Language/locallang.xlf:moreNews" /></f:link.page>
+							</div>
+						</f:if>
+					</div>
+				</f:defaultCase>
+			</f:switch>
+		</f:then>
+		<f:else>
+			<div class="content news-list">
+				<div class="col12">
+					<div class="message message--bad">
+						<p><f:translate key="list_nonewsfound" /></p>
+					</div>
+				</div>
+			</div>
+		</f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+
+</f:section>
+</html>

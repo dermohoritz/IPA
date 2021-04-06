@@ -1,0 +1,96 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:comment>
+	Sollten hier Anpassungen, an der Heading-Ausgabe vorgenommen werden, so müssen ebenfalls in folgendem Template Angepassungen vorgenommen werden:
+	Resources/Private/Extensions/fluid_styled_content/Partials/Header/Header.html
+</f:comment>
+
+	<f:switch expression="{data.header_layout}">
+		<f:case value="1">
+			<h1 class="heading{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle}', then: ' {data.tx_t8_jetpack_headerstyle}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}">
+				<f:link.typolink class="heading__link" parameter="{data.header_link}"><span class="heading__text">{data.header}</span></f:link.typolink>
+			</h1>
+			<f:if condition="{data.subheader}">
+				<f:then>
+					<h2 class="heading heading--sub{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h1\'', then: ' heading--h2')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h2\'', then: ' heading--h3')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h3\'', then: ' heading--h4')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h4\'', then: ' heading--h5')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h6\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'visuallyhidden\'', then: ' visuallyhidden')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'lead\'', then: ' lead')}">
+						<span class="heading__text">{data.subheader}</span>
+					</h2>
+				</f:then>
+			</f:if>
+		</f:case>
+		<f:case value="2">
+			<h2 class="heading{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle}', then: ' {data.tx_t8_jetpack_headerstyle}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}">
+				<f:link.typolink class="heading__link" parameter="{data.header_link}"><span class="heading__text">{data.header}</span></f:link.typolink>
+			</h2>
+			<f:if condition="{data.subheader}">
+				<f:then>
+					<h3 class="heading heading--sub{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h1\'', then: ' heading--h2')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h2\'', then: ' heading--h3')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h3\'', then: ' heading--h4')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h4\'', then: ' heading--h5')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h6\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'visuallyhidden\'', then: ' visuallyhidden')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'lead\'', then: ' lead')}">
+						<span class="heading__text">{data.subheader}</span>
+					</h3>
+				</f:then>
+			</f:if>
+		</f:case>
+		<f:case value="3">
+			<h3 class="heading{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle}', then: ' {data.tx_t8_jetpack_headerstyle}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}">
+				<f:link.typolink class="heading__link" parameter="{data.header_link}"><span class="heading__text">{data.header}</span></f:link.typolink>
+			</h3>
+			<f:if condition="{data.subheader}">
+				<f:then>
+					<h4 class="heading heading--sub{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h1\'', then: ' heading--h2')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h2\'', then: ' heading--h3')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h3\'', then: ' heading--h4')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h4\'', then: ' heading--h5')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h6\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'visuallyhidden\'', then: ' visuallyhidden')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'lead\'', then: ' lead')}">
+						<span class="heading__text">{data.subheader}</span>
+					</h4>
+				</f:then>
+			</f:if>
+		</f:case>
+		<f:case value="4">
+			<h4 class="heading{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle}', then: ' {data.tx_t8_jetpack_headerstyle}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}">
+				<f:link.typolink class="heading__link" parameter="{data.header_link}"><span class="heading__text">{data.header}</span></f:link.typolink>
+			</h4>
+			<f:if condition="{data.subheader}">
+				<f:then>
+					<h5 class="heading heading--sub{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h1\'', then: ' heading--h2')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h2\'', then: ' heading--h3')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h3\'', then: ' heading--h4')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h4\'', then: ' heading--h5')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h6\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'visuallyhidden\'', then: ' visuallyhidden')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'lead\'', then: ' lead')}">
+						<span class="heading__text">{data.subheader}</span>
+					</h5>
+				</f:then>
+			</f:if>
+		</f:case>
+		<f:case value="5">
+			<h5 class="heading{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle}', then: ' {data.tx_t8_jetpack_headerstyle}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}">
+				<f:link.typolink class="heading__link" parameter="{data.header_link}"><span class="heading__text">{data.header}</span></f:link.typolink>
+			</h5>
+			<f:if condition="{data.subheader}">
+				<f:then>
+					<h6 class="heading heading--sub{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h1\'', then: ' heading--h2')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h2\'', then: ' heading--h3')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h3\'', then: ' heading--h4')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h4\'', then: ' heading--h5')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h6\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'visuallyhidden\'', then: ' visuallyhidden')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'lead\'', then: ' lead')}">
+						<span class="heading__text">{data.subheader}</span>
+					</h6>
+				</f:then>
+			</f:if>
+		</f:case>
+		<f:case value="6">
+			<h6 class="heading{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle}', then: ' {data.tx_t8_jetpack_headerstyle}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}">
+				<f:link.typolink class="heading__link" parameter="{data.header_link}"><span class="heading__text">{data.header}</span></f:link.typolink>
+			</h6>
+			<f:if condition="{data.subheader}">
+				<f:then>
+					<h6 class="heading heading--sub{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h1\'', then: ' heading--h2')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h2\'', then: ' heading--h3')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h3\'', then: ' heading--h4')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h4\'', then: ' heading--h5')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h6\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'visuallyhidden\'', then: ' visuallyhidden')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'lead\'', then: ' lead')}">
+						<span class="heading__text">{data.subheader}</span>
+					</h6>
+				</f:then>
+			</f:if>
+		</f:case>
+		<f:defaultCase>
+			<h2 class="heading{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle}', then: ' {data.tx_t8_jetpack_headerstyle}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}">
+				<f:link.typolink class="heading__link" parameter="{data.header_link}"><span class="heading__text">{data.header}</span></f:link.typolink>
+			</h2>
+			<f:if condition="{data.subheader}">
+				<f:then>
+					<h3 class="heading heading--sub{f:if(condition:data.header_position, then:' heading--{data.header_position}')}{f:if(condition:'{data.tx_t8jetpack_headerhyphenation}',else:' no-hyphenation')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h1\'', then: ' heading--h2')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h2\'', then: ' heading--h3')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h3\'', then: ' heading--h4')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h4\'', then: ' heading--h5')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h6\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'heading--h5\'', then: ' heading--h6')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'visuallyhidden\'', then: ' visuallyhidden')}{f:if(condition: '{data.tx_t8_jetpack_headerstyle} == \'lead\'', then: ' lead')}">
+						<span class="heading__text">{data.subheader}</span>
+					</h3>
+				</f:then>
+			</f:if>
+		</f:defaultCase>
+	</f:switch>
+
+</html>

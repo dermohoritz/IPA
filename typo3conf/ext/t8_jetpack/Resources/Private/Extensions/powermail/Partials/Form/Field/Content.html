@@ -1,0 +1,5 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<div class="form__fieldwrap form__fieldwrap--content {f:if(condition: '{field.css}', then: 'col{field.css} col-medium-{field.css} col-small-12', else: 'col12')} {settings.styles.framework.fieldAndLabelWrappingClasses} powermail_fieldwrap powermail_fieldwrap_type_content powermail_fieldwrap_{field.marker}">
+	<vh:Misc.ContentElement uid="{field.contentElement}" />
+</div>

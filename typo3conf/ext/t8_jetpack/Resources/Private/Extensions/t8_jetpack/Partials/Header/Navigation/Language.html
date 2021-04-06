@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+	<f:if condition="{navigationLanguage}">
+		<nav class="navigation navigation--language">
+			<ul class="navigation__list navigation__list--language">
+				<f:for each="{navigationLanguage}" as="item">
+					<li class="navigation__item navigation__item--language{f:if(condition:item.active, then:' navigation__item--active')}{f:if(condition: item.available, else: ' navigation__item--disabled')}">
+						<f:if condition="{item.available}">
+							<f:then>
+								<a href="{item.link}" hreflang="{item.hreflang}" title="{item.navigationTitle}" class="navigation__link navigation__link--language{f:if(condition:item.active, then:' navigation__link--active')}">
+									<span class="navigation__text navigation__text--language{f:if(condition:item.active, then:' navigation__text--active')}">{item.twoLetterIsoCode}</span>
+								</a>
+							</f:then>
+							<f:else>
+								<span class="navigation__text navigation__text--language{f:if(condition:item.active, then:' navigation__text--active')}">{item.twoLetterIsoCode}</span>
+							</f:else>
+						</f:if>
+					</li>
+				</f:for>
+			</ul>
+		</nav>
+    </f:if>
+
+</html>

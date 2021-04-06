@@ -1,0 +1,11 @@
+# change default RTE Config to customized
+RTE.default.preset = T8Custom
+
+# changing the preset for a single field or type is possible as described here: https://docs.typo3.org/c/typo3/cms-rte-ckeditor/master/en-us/Configuration/ConfigureTypo3.html#relevant-settings-for-rte-ckeditor
+#RTE.config.tx_tablename.field_name.preset = minimal
+#RTE.config.tt_content.bodytext.types.textmedia.preset = minimal
+
+# not possible to override powermail flexform atm: https://forge.typo3.org/issues/91690
+#TCEFORM.tt_content.pi_flexform.powermail_pi1.sender.settings\.flexform\.sender\.body.config.richtextConfiguration = T8Custom
+#TCEFORM.tt_content.pi_flexform.powermail_pi1.receiver.settings\.flexform\.receiver\.body.config.richtextConfiguration = T8Custom
+#TCEFORM.tt_content.pi_flexform.powermail_pi1.thx.settings\.flexform\.thx\.body.config.richtextConfiguration = T8Custom

@@ -1,0 +1,14 @@
+styles.content {
+	textmedia {
+		maxW = 1600
+		maxWInText = 1600
+
+		# Lightbox and Link settings
+		linkWrap {
+			width = 1920
+			height =
+			lightboxEnabled = 1
+			lightboxCssClass = gallery__link
+		}
+	}
+}

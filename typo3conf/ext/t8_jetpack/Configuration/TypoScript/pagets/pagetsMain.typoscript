@@ -1,0 +1,2 @@
+@import 'EXT:t8_jetpack/Configuration/TypoScript/pagets/cms/*.typoscript'
+@import 'EXT:t8_jetpack/Configuration/TypoScript/pagets/extensions/*.typoscript'

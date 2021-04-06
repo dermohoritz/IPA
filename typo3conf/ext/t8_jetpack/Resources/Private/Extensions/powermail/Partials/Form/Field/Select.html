@@ -1,0 +1,22 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<div class="form__fieldwrap form__fieldwrap--select {f:if(condition: '{field.css}', then: 'col{field.css} col-medium-{field.css} col-small-12', else: 'col12')} {settings.styles.framework.fieldAndLabelWrappingClasses} powermail_fieldwrap powermail_fieldwrap_type_select powermail_fieldwrap_{field.marker}">
+	<f:render partial="Form/FieldLabel" arguments="{_all}" />
+
+	<div class="form__input--select__wrap">
+		<vh:Form.SelectField
+			options="{field.modifiedSettings}"
+			property="{field.marker}"
+			class="form__input form__input--select {settings.styles.framework.fieldClasses} {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')} powermail_select"
+			id="powermail_field_{field.marker}"
+			additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field)}"
+			multiple="{field.multiselectForField}"
+			value="{vh:Misc.PrefillField(field:field, mail:mail)}" />
+	</div>
+	
+	<f:if condition="{field.multiselect}">
+		<f:if condition="{settings.validation.client}">
+			<div class="powermail_field_error_container powermail_field_error_container_{field.marker}"></div>
+		</f:if>
+	</f:if>
+</div>
