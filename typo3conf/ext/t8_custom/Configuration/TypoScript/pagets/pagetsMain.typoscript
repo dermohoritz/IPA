@@ -1,2 +1,0 @@
-@import 'EXT:t8_custom/Configuration/TypoScript/pagets/cms/*.typoscript'
-@import 'EXT:t8_custom/Configuration/TypoScript/pagets/extensions/*.typoscript'

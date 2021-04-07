@@ -1,3 +1,0 @@
-# News-Items
-# default value for media: showinpreview -> show in all views
-TCAdefaults.sys_file_reference.showinpreview = 1

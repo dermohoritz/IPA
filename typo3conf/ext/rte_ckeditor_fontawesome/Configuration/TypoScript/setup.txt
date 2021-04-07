@@ -1,8 +1,0 @@
-#####################
-### CSS einbinden ###
-#####################
-page.includeCSS {
-  ckefontawesome = {$plugin.tx_ckeditor_fontawesome.css}
-  ckefontawesome.external = 1
-  ckefontawesome.if.isTrue = {$plugin.tx_ckeditor_fontawesome.loadCSS}
-}

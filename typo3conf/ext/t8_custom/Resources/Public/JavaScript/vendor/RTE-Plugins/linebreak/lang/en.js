@@ -1,1 +1,0 @@
-CKEDITOR.plugins.setLang("linebreak","en",{label_shy:"Soft hyphen (&amp;shy;)",label_wbr:"Word break opportunity (<wbr>)"});

@@ -1,3 +1,0 @@
-@import 'EXT:t8_custom/Configuration/TypoScript/setup/cms/*.typoscript'
-@import 'EXT:t8_custom/Configuration/TypoScript/setup/extensions/*.typoscript'
-@import 'EXT:t8_custom/Configuration/TypoScript/setup/objects/*.typoscript'

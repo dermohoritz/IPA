@@ -1,3 +1,0 @@
-# remove class contenttable from tables,
-# gives possibility to add classes via rte yaml
-lib.parseFunc_RTE.externalBlocks.table.stdWrap >

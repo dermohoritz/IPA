@@ -1,4 +1,0 @@
-page.includeCSS {
-    lightbox = EXT:t8_jetpack/Resources/Public/JavaScript/vendor/lightbox2-2.11.1/dist/css/lightbox.min.css
-    lightbox.disableCompression = 1
-}
