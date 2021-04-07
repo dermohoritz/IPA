@@ -1,0 +1,5 @@
+# remove fontaweseome css for frontend (it's embedded already)
+plugin.tx_ckeditor_fontawesome {
+    # cat=ckeditor_fontawesome; type=boolean; label=Include Fontawesome CSSS (Default is yes)
+	loadCSS = 0
+}

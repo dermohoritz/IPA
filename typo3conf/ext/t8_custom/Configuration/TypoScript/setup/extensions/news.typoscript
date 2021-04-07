@@ -1,0 +1,43 @@
+# Generelle Einstellungen
+plugin.tx_news {
+	settings {
+		# Entfernt das Standard-Bild falls kein Bild ausgewählt wurde.
+		displayDummyIfNoMedia = 0
+	}
+}
+
+# Liste
+plugin.tx_news {
+	settings {
+		list.media.image.maxWidth = 800
+		list.media.image.maxHeight = 600
+
+		media.maxWidth = 1600
+		media.maxHeight = 1200
+
+		# Maximale Anzahl Zeichen in Teaser/BodyText in Listeansicht
+		cropMaxCharacters = 250
+
+		# Dummy Image, fall kein Bild in Newsbeitrag vorhanden
+		#list.media.dummyImage = fileadmin/
+	}
+}
+
+# Detail
+plugin.tx_news {
+	settings.detail {
+		media.image.maxWidth = 1600
+		media.image.maxHeight = 1600
+		# showSocialShareButtons = 0
+	}
+}
+
+# Paginierung
+plugin.tx_news {
+	settings {
+		list.paginate {
+			insertAbove = FALSE
+			insertBelow = TRUE
+		}
+	}
+}

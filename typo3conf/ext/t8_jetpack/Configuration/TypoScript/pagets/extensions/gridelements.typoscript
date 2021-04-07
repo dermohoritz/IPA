@@ -1,0 +1,5 @@
+# Remove children from gridelements in list view. could cause serious problems with sorting
+# https://docs.typo3.org/typo3cms/extensions/gridelements/stable/Chapters/Tsconfig/Index.html#tsconfig
+TCEFORM.tt_content.tx_gridelements_backend_layout {
+  removeChildrenFromList = 1
+}

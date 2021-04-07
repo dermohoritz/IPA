@@ -1,0 +1,20 @@
+# remove default jquery
+page {
+    javascriptLibs {
+        jQuery >
+	}
+}
+
+# ASYNC DEAKTIVIERT LASSEN
+# Grund: Scripts welche jQuery vorraussetzen, wurden früher geladen als jQuery. Dies führte zu einer Menge an JavaScript-Fehlern.
+page.includeJSLibs {
+	jquery = EXT:t8_jetpack/Resources/Public/JavaScript/vendor/jquery-3.4.1.min.js
+	jquery.disableCompression = 1
+	jquery.forceOnTop = 1
+
+	lightbox = EXT:t8_jetpack/Resources/Public/JavaScript/vendor/lightbox2-2.11.1/dist/js/lightbox.min.js
+	lightbox.disableCompression = 1
+
+	plyr = EXT:t8_jetpack/Resources/Public/JavaScript/vendor/plyr-3.5.7/dist/plyr.polyfilled.min.js
+	plyr.disableCompression = 1
+}

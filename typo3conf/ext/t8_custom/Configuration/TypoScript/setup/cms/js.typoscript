@@ -1,0 +1,43 @@
+# include custom js
+page.includeJSFooter {
+	custom = EXT:t8_custom/Resources/Public/JavaScript/custom.js
+}
+
+# initialize Hyphenopoly
+# add/remove languages as they are needed (https://github.com/mnater/Hyphenopoly)
+# hreflang (from siteconfig) tag must match the lang key here -> if not, set fallbacks
+page.headerData.201 = TEXT
+page.headerData.201.value (
+	<script>
+		var Hyphenopoly = {
+			require: {
+				"de": "Silbentrennungsalgorithmus",
+				"de-ch": "Silbentrennungsalgorithmus",
+				"en": "Supercalifragilisticexpialidocious",
+				"en-us": "Supercalifragilisticexpialidocious",
+				"en-gb": "Supercalifragilisticexpialidocious",
+				"fr": "algorithmedecesure",
+				"fr-ch": "algorithmedecesure",
+				"it": "algoritmodisillabazione",
+				"it-ch": "algoritmodisillabazione",
+			},
+			fallbacks: {
+				"fr-ch": "fr",
+				"de-ch": "de",
+				"it-ch": "it",
+				"en-gb": "en",
+				"en-us": "en",
+			},
+			paths: {
+				patterndir: "/typo3conf/ext/t8_jetpack/Resources/Public/JavaScript/vendor/Hyphenopoly-4.1.0/patterns/",
+				maindir: "/typo3conf/ext/t8_jetpack/Resources/Public/JavaScript/vendor/Hyphenopoly-4.1.0/"
+			},
+			setup: {
+				selectors: {
+					".hyphenate": {}
+				}
+			}
+		};
+	</script>
+	<script src="/typo3conf/ext/t8_jetpack/Resources/Public/JavaScript/vendor/Hyphenopoly-4.1.0/Hyphenopoly_Loader.js" type="text/javascript"></script>
+)

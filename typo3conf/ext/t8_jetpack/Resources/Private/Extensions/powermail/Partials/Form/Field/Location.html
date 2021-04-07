@@ -1,0 +1,12 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<div class="form__fieldwrap form__fieldwrap--input form__fieldwrap--location {f:if(condition: '{field.css}', then: 'col{field.css} col-medium-{field.css} col-small-12', else: 'col12')} {settings.styles.framework.fieldAndLabelWrappingClasses} powermail_fieldwrap powermail_fieldwrap_type_location powermail_fieldwrap_{field.marker}">
+	<f:render partial="Form/FieldLabel" arguments="{_all}" />
+
+	<f:form.textfield
+			id="powermail_field_{field.marker}"
+			property="{field.marker}"
+			value="{vh:Misc.PrefillField(field:field, mail:mail)}"
+			additionalAttributes="{data-powermail-location:'prefill'}"
+			class="form__input form__input--location {settings.styles.framework.fieldClasses} {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')} powermail_location" />
+</div>

@@ -1,0 +1,4 @@
+options {
+	pageTree.showPageIdWithTitle = 1
+}
+#admPanel.override.tsdebug.forceTemplateParsing = 1

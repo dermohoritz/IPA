@@ -1,0 +1,55 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:if condition="{item.children}">
+	<f:if condition="{item.children}">
+		<f:for each="{item.children}" as="child">
+			<f:if condition="{child.data.uid} == {pid} || {child.active} == 1">
+				<f:variable name="activeChild" value="yes"/>
+			</f:if>
+		</f:for>
+	</f:if>
+</f:if>
+<li class="navigation__item{f:if(condition:'{item.data.uid} == {pid} || {item.data.shortcut} == {pid} || {item.active} == 1 || {activeChild} == \'yes\'', then:' navigation__item--active')}{f:if(condition:'{item.children}', then: ' navigation__item--has-children')}">
+	<f:if condition="{item.data.target}">
+		<f:then>
+			<f:link.page pageUid="{item.data.uid}" title="{item.data.title}" target="{item.data.target}" class="navigation__link{f:if(condition:'{item.data.uid} == {pid} || {item.data.shortcut} == {pid} || {item.active} == 1 || {activeChild} == \'yes\'' then:' navigation__link--active')}">
+				<f:render section="linktext" arguments="{_all}"/>
+			</f:link.page>
+		</f:then>
+		<f:else if="{item.target}">
+			<f:link.page pageUid="{item.data.uid}" title="{item.data.title}" target="{item.target}" class="navigation__link{f:if(condition:'{item.data.uid} == {pid} || {item.data.shortcut} == {pid} || {item.active} == 1 || {activeChild} == \'yes\'', then:' navigation__link--active')}">
+				<f:render section="linktext" arguments="{_all}"/>
+			</f:link.page>
+		</f:else>
+		<f:else>
+			<f:link.page pageUid="{item.data.uid}" title="{item.data.title}" class="navigation__link{f:if(condition:'{item.data.uid} == {pid} || {item.data.shortcut} == {pid} || {item.active} == 1 || {activeChild} == \'yes\'', then:' navigation__link--active')}">
+				<f:render section="linktext" arguments="{_all}"/>
+			</f:link.page>
+		</f:else>
+	</f:if>
+
+	<f:if condition="{item.children}">
+		<f:if condition="{activeChild} != 'yes' && {item.active} == 1">
+			<f:variable name="activeChild" value="yes"/>
+        </f:if>
+        <f:if condition="!{level}">
+			<f:variable name="level" value="2"/>
+		</f:if>
+		<f:render section="navigationSub" arguments="{navigationSub:item.children,pid:pid,level:level,submenuOpen:activeChild,showArrows:showArrows}"/>
+	</f:if>
+</li>
+
+<f:section name="linktext">
+	<span class="navigation__text{f:if(condition:'{item.data.uid} == {pid} || {item.data.shortcut} == {pid} || {item.active} == 1 || {activeChild} == \'yes\'', then:' navigation__text--active')}">{item.title}</span><f:if condition="{item.children} && {showArrows} == 'yes'"><span class="navigation__arrow{f:if(condition:'{activeChild} == \'yes\' || {item.active} == 1', then: ' navigation__arrow--open')} far fa-chevron-down"></span></f:if>
+</f:section>
+
+<f:section name="navigationSub">
+	<ul class="navigation__level{level}{f:if(condition:'{submenuOpen} == \'yes\'', then: ' navigation__level{level}--open')}">
+		<f:for each="{navigationSub}" as="navigationSubItem">
+            <f:render partial="Header/Navigation/Elements/Item" arguments="{item:navigationSubItem,pid:pid,level:'{level + 1}',showArrows:showArrows}"/>
+		</f:for>
+	</ul>
+</f:section>
+
+</html>

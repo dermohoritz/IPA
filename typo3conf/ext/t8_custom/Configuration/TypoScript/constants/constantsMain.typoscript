@@ -1,0 +1,2 @@
+@import 'EXT:t8_custom/Configuration/TypoScript/constants/cms/*.typoscript'
+@import 'EXT:t8_custom/Configuration/TypoScript/constants/extensions/*.typoscript'

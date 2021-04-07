@@ -1,0 +1,9 @@
+## Default Configuration for aip_cookie_law ##
+# cookieInfoPid is set in t8_custom/Configuration/TypoScript/constants/cms/template.typoscript
+plugin.tx_aipcookielaw.settings.IdPageInformation = {$cookieInfoPid}
+plugin.tx_aipcookielaw.settings.BannerPosition = bottom
+plugin.tx_aipcookielaw.settings.OnOffPopUp = 0
+plugin.tx_aipcookielaw.settings.OnOff = 1
+
+# embed own css to avoid default css with all the !important styles
+plugin.tx_aipcookielaw.settings.CssStyle = EXT:t8_jetpack/Resources/Public/CSS/cookie-banner.css

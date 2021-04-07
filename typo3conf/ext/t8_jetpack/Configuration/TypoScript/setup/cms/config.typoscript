@@ -1,0 +1,18 @@
+config {
+	baseURL = {$baseURL}
+	spamProtectEmailAddresses = 7
+	spamProtectEmailAddresses_atSubst = (at)
+	disablePrefixComment = 1
+
+	removeDefaultCSS = 1
+	inlineStyle2TempFile = 1
+
+	removeDefaultJS = 0
+	moveJsFromHeaderToFooter = 1
+}
+config {
+	headerComment (
+		Webentwicklung mit ❤ Terminal8 GmbH, Bern
+		www.terminal8.ch
+	)
+}

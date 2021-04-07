@@ -1,0 +1,25 @@
+## RTE (for Linebreak-Plugin: https://github.com/sebkln/linebreak)
+// Allow <wbr> tag rendering in frontend:
+lib.parseFunc.allowTags := addToList(wbr)
+lib.parseFunc_RTE.allowTags := addToList(wbr)
+
+// Remove any 'shy' classes from <span> elements:
+lib.parseFunc_RTE.nonTypoTagStdWrap.HTMLparser.tags.span.fixAttrib.class.removeIfEquals = shy
+
+// Remove all <span> elements which have no attribute:
+lib.parseFunc_RTE.nonTypoTagStdWrap.HTMLparser.rmTagIfNoAttrib = span
+
+// The same is needed for all occurrences inside lists:
+lib.parseFunc_RTE.externalBlocks {
+    ul.stdWrap {
+        callRecursive = 1
+        HTMLparser = 1
+        HTMLparser {
+            tags.span.fixAttrib.class.removeIfEquals = shy
+            rmTagIfNoAttrib = span
+            keepNonMatchedTags = 1
+        }
+
+    }
+    ol < .ul
+}

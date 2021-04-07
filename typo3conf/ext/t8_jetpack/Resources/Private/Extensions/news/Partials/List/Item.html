@@ -1,0 +1,111 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:comment>
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+</f:comment>
+
+<article class="news-list__item {f:if(condition:col, then:' {col}', else: ' col4 col-medium-6 col-small-12')}">
+	<n:excludeDisplayedNews newsItem="{newsItem}"/>
+	
+	
+	<f:if condition="{newsItem.mediaPreviews}">
+		<!-- media preview element -->
+		<f:then>
+			<div class="news-list__image-wrap">
+				<f:render partial="List/Item/ItemMedia" arguments="{newsItem:newsItem,settings:settings}" />
+			</div>
+		</f:then>
+		<f:comment> no dummy </f:comment>
+	</f:if>
+	
+	<div class="news-list__text">
+		<!-- header -->
+		<header class="news-list__header">
+			<f:switch expression="{contentObjectData.header_layout}">
+				<f:case value="1">
+					<h2 class="news-list__heading heading--h2">
+						<f:render partial="List/Item/ItemHeadingLink" arguments="{newsItem:newsItem,settings:settings}" />
+					</h2>
+				</f:case>
+				<f:case value="2">
+					<h3 class="news-list__heading heading--h2">
+						<f:render partial="List/Item/ItemHeadingLink" arguments="{newsItem:newsItem,settings:settings}" />
+					</h3>
+				</f:case>
+				<f:case value="3">
+					<h4 class="news-list__heading heading--h2">
+						<f:render partial="List/Item/ItemHeadingLink" arguments="{newsItem:newsItem,settings:settings}" />
+					</h4>
+				</f:case>
+				<f:case value="4">
+					<h5 class="news-list__heading heading--h2">
+						<f:render partial="List/Item/ItemHeadingLink" arguments="{newsItem:newsItem,settings:settings}" />
+					</h5>
+				</f:case>
+				<f:case value="5">
+					<h6 class="news-list__heading heading--h2">
+						<f:render partial="List/Item/ItemHeadingLink" arguments="{newsItem:newsItem,settings:settings}" />
+					</h6>
+				</f:case>
+				<f:case value="6">
+					<h6 class="news-list__heading heading--h2">
+						<f:render partial="List/Item/ItemHeadingLink" arguments="{newsItem:newsItem,settings:settings}" />
+					</h6>
+				</f:case>
+				<f:defaultCase>
+					<h3 class="news-list__heading heading--h2">
+						<f:render partial="List/Item/ItemHeadingLink" arguments="{newsItem:newsItem,settings:settings}" />
+					</h3>
+				</f:defaultCase>
+			</f:switch>
+		</header>
+
+		<div class="news-list__datecategory">
+			<f:spaceless>
+			<time class="news-list__date" itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+				<f:format.date format="{f:translate(key:'LLL:EXT:t8_jetpack/Resources/Private/Language/locallang.xlf:dateFormat')}">{newsItem.datetime}</f:format.date>
+			</time>
+
+			<f:if condition="{newsItem.categories}">
+				| <ul class="news-list__category">
+					<f:for each="{newsItem.categories}" as="category">
+						<li class="news-list__category__item">
+							<span class="news-list__category__item__text">{category.title}</span>
+						</li>
+					</f:for>
+				</ul>
+			</f:if>
+
+			</f:spaceless>
+		</div>
+
+		<!-- teaser -->
+		<div class="news-list__teaser" itemprop="description">
+			<n:removeMediaTags>
+				<f:if condition="{newsItem.teaser}">
+					<f:then>
+						{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.nl2br()}
+					</f:then>
+					<f:else>
+						{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+					</f:else>
+				</f:if>
+			</n:removeMediaTags>
+		</div>
+
+		<footer class="news-list__footer">
+			<n:link newsItem="{newsItem}" settings="{settings}" class="news-list__morelink link--arrow" title="{newsItem.title}">
+				<span class="visuallyhidden"><f:translate key="more-link"/></span>
+			</n:link>
+		</footer>
+	</div>
+
+
+</article>
+
+</html>

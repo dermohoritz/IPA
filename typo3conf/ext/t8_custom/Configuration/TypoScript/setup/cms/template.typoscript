@@ -1,0 +1,93 @@
+page = PAGE
+page {
+	10 = FLUIDTEMPLATE
+	10 {
+		templateName = TEXT
+		templateName.stdWrap {
+			cObject = CASE
+			cObject {
+                # https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/BackendLayout/Index.html#output-of-a-backend-layout-in-the-frontend
+                # Using data = pagelayout is the same as using as
+                # field = backend_layout
+                # ifEmpty.data = levelfield:-2,backend_layout_next_level,slide
+                # ifEmpty.ifEmpty = default
+				key.data = pagelayout
+
+				1 = TEXT
+				1.value = Default
+
+                2 = TEXT
+				2.value = Home
+                
+                4 = TEXT
+				4.value = NoBanner
+
+				default = TEXT
+				default.value = Default
+			}
+		}
+		layoutRootPaths {
+			10 = EXT:t8_jetpack/Resources/Private/Extensions/t8_jetpack/Layouts/
+			20 = EXT:t8_custom/Resources/Private/Extensions/t8_jetpack/Layouts/
+		}
+		templateRootPaths {
+            10 = EXT:t8_jetpack/Resources/Private/Extensions/t8_jetpack/Templates/
+			20 = EXT:t8_custom/Resources/Private/Extensions/t8_jetpack/Templates/
+		}
+		partialRootPaths {
+            10 = EXT:t8_jetpack/Resources/Private/Extensions/t8_jetpack/Partials/
+			20 = EXT:t8_custom/Resources/Private/Extensions/t8_jetpack/Partials/
+		}
+
+        variables {
+            siteName = TEXT
+            siteName.value = {site:websiteTitle}
+            siteName.insertData = 1
+            siteLogo = TEXT
+            siteLogo.value = {$siteLogo}
+            homePid = TEXT
+            homePid.value = {$homePid}
+            footerPid = TEXT
+            footerPid.value = {$footerPid}
+            searchPid = TEXT
+            searchPid.value = {$searchPid}
+        }
+
+        ### DATA PROCESSING ###
+        ## Navigations
+        dataProcessing {
+            ### Main Navigation
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                #special = directory
+                #special = list
+                #special.value.field = pages
+                #entryLevel = 1
+
+                levels = 2
+                as = navigationMain
+                expandAll = 1
+                titleField = nav_title // title
+            }
+
+            ### Language Navigation
+            20 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+            20 {
+               languages = auto
+               as = navigationLanguage
+            }
+
+            ### Meta Navigation
+            30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            30 {
+                special = directory
+                special.value = {$metaNavPid}
+
+                levels = 1
+                as = navigationMeta
+                expandAll = 1
+                titleField = nav_title // title
+            }
+        }
+	}
+}

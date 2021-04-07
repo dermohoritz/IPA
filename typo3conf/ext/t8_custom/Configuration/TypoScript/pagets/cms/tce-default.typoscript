@@ -1,0 +1,30 @@
+# Spaltenlayouts
+# fluid_styled_content/Layouts/Default.html
+# gridelements/Layouts/General.html
+#TCEFORM.tt_content.layout {
+#	addItems {
+#		#6 = zusätzliches Layout
+#	}
+#}
+
+# Text & Media
+# Position & Layout
+# add additional Option for Gallery Settings
+#TCEFORM.tt_content.imageorient {
+#	addItems{
+#		100 = grossflächiger Link mit Icon (Bildlink, Bildbeschreibung)
+#		100.icon = icon-link
+#	}
+#}
+
+# Backgrounds
+TCEFORM.tt_content.frame_class {
+	# Hintergründe werden als CSS-Klasse im Frontend mit vorangestelltem "background-" eingefügt.
+	# Ist z.B. Grau ausgewählt => background-grey
+	# Eingesetzt hier: fluid_styled_content/Layouts/Default.html
+	# und hier: gridelements/Layouts/General.html
+	addItems {
+		grey = Hellgrau (nicht erlaubt innerhalb Spalte)
+		#black = Dunkelgrau (nicht erlaubt innerhalb Spalte)
+	#}
+#}

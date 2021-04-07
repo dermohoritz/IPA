@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:if condition="{navigationMain}">
+	<f:then>
+		<div class="navigation__mobile__burger">
+			<span class="navigation__mobile__burger__bar"></span>
+			<span class="navigation__mobile__burger__bar"></span>
+			<span class="navigation__mobile__burger__bar"></span>
+		</div>
+		<div class="navigation__mobile__nav__wrap">
+			<nav class="navigation__mobile__nav">
+				<ul class="navigation__mobile__list">
+					<f:for each="{navigationMain}" as="navigationMainItem">
+                        
+						<f:render partial="Header/Navigation/Elements/Item" arguments="{item:navigationMainItem,pid:pid,showArrows:'yes'}"/>
+					</f:for>
+				</ul>
+                <div class="header__top__mobile">
+                    <div class="header__meta">
+                        <ul class="navigation navigation__meta">
+                            <f:for each="{navigationMeta}" as="navigationMetaItem" iteration="iterator">
+                                <f:render partial="Header/Navigation/Elements/MetaItem" arguments="{item:navigationMetaItem,pid:data.uid,showArrows:'no'}"/>
+                            </f:for>
+                        </ul>
+                        <f:comment>
+                            <f:render partial="Header/Navigation/Elements/keSearch" arguments="{searchPid:searchPid}"/>
+                        </f:comment>
+                    </div>
+            
+                    <div class="header__lang">
+                        <f:render partial="Header/Navigation/Language" arguments="{navigationLanguage:navigationLanguage,pid:data.uid}" />
+                    </div>
+                </div>
+			</nav>
+		</div>
+	</f:then>
+</f:if>
+
+</html>

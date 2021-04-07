@@ -1,0 +1,108 @@
+# Load default processing options
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+    - { resource: "EXT:rte_ckeditor_fontawesome/Configuration/RTE/PluginFA5.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+# Linebreak Plugin from https://github.com/sebkln/linebreak
+editor:
+  externalPlugins:
+    linebreak:
+      resource: "EXT:t8_custom/Resources/Public/JavaScript/vendor/RTE-Plugins/linebreak/plugin.js"
+  config:
+    contentsCss: "EXT:t8_custom/Resources/Public/CSS/rte.css"
+    stylesSet:
+      - { name: "wie H1", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'], attributes: { class: "heading--h1"} }
+      - { name: "wie H2", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'], attributes: { class: "heading--h2"} }
+      - { name: "wie H3", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'], attributes: { class: "heading--h3"} }
+      - { name: "wie H4", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'], attributes: { class: "heading--h4"} }
+      - { name: "wie H5", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'], attributes: { class: "heading--h5"} }
+      - { name: "wie H6", element: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'], attributes: { class: "heading--h6"} }
+      - { name: "keine Silbentrennung", element: "span", attributes: { class: "no-hyphenation"} }
+
+    format_tags: "p;h2;h3;h4;h5;h6"
+
+    # The following line allows <span> elements with the 'shy' class.
+    # The class is used only inside the CKEditor to unhide the &shy; entity for editors!
+    # The whole <span> element is removed when processing the content for the Frontend.
+    extraAllowedContent: "*(*)[data-*]; span(shy)"
+    
+    toolbarGroups:
+      - { name: styles, groups: [ styles, format ] }
+      - { name: basicstyles, groups: [ basicstyles ] }
+      - { name: paragraph, groups: [ list, indent, blocks, align ] }
+      - { name: links, groups: [ links ] }
+      - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
+      - { name: editing, groups: [ spellchecker ] }
+      - { name: insert, groups: [ insert ] }
+      - { name: tools, groups: [ table, specialchar ] }
+      - { name: document, groups: [ mode ] }
+      - { name: linebreak }
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - linebreak
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - Strike
+      - Anchor
+      - Outdent
+      - Indent
+      - JustifyBlock
+      - HorizontalRule
+      - Underline
+
+    # Clipboard/Pasting behaviour
+    forcePasteAsPlainText: true
+    clipboard_defaultContentType: "text"
+    pasteFromWordRemoveFontStyles: true
+
+processing:
+  allowTags:
+    - wbr
+    # - cite
+    # - button
+
+# Specific default CSS classes for links created inside the CKEditor
+buttons:
+  link:
+    relAttribute:
+      enabled: false
+    properties:
+      class:
+        allowedClasses: ''
+    page:
+      properties:
+        class:
+          default: ''
+    file:
+      properties:
+        class:
+          default: ''
+    folder:
+      properties:
+        class:
+          default: ''
+    url:
+      properties:
+        class:
+          default: ''
+        target:
+          default: '_blank'
+    mail:
+      properties:
+        class:
+          default: ''
+

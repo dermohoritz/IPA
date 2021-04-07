@@ -1,0 +1,37 @@
+base: 'https://probst-maveg.ch.80-74-153-240.tajo.host.ch'
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=5'
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    base: /
+    typo3Language: de
+    locale: de_CH.UTF-8
+    iso-639-1: de
+    websiteTitle: Probst-Maveg
+    navigationTitle: DE
+    hreflang: de-CH
+    direction: ltr
+    flag: ch
+    languageId: 0
+  -
+    title: Français
+    enabled: true
+    languageId: 1
+    base: /fr
+    typo3Language: fr
+    websiteTitle: Probst-Maveg
+    locale: fr_FR.UTF-8
+    iso-639-1: fr
+    navigationTitle: Francais
+    hreflang: fr-CH
+    direction: ltr
+    fallbackType: free
+    fallbacks: '0'
+    flag: fr
+rootPageId: 1
+websiteTitle: Probst-Maveg

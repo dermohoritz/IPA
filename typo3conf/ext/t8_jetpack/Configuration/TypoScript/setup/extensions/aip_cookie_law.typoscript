@@ -1,0 +1,34 @@
+[{$plugin.tx_aipcookielaw.settings.OnOff} == '1']
+    page.stdWrap.replacement {
+        # Replacement for YouTube iframes: match 'src="youtube.com', add youtube-nocookie.com domain (is not replaced in aip_cookie_law)
+        20 {
+            search = #(<iframe\b[^>]*)(youtube.com|youtube-nocookie.com|youtu.be)(.*?)(</iframe>)#s
+            replace = <script type="text/plain" class="cc-onconsent-social"> jQuery('#id_inutile').html('${1}${2}${3}${4}')</script>
+            useRegExp = 1
+        }
+    }
+[end]
+
+["{$plugin.tx_aipcookielaw.settings.GATrackingId}"]
+    ## if GA Property is set
+    ## GA Opt Out Function (Google Analytics is inserted by aip_cookie_law)
+    page.headerData.1789 = TEXT
+    page.headerData.1789.value (
+        <script>
+            // Set to the same value as the web property used on the site
+            var gaProperty = '{$plugin.tx_aipcookielaw.settings.GATrackingId}';
+
+            // Disable tracking if the opt-out cookie exists.
+            var disableStr = 'ga-disable-' + gaProperty;
+            if (document.cookie.indexOf(disableStr + '=true') > -1) {
+                window[disableStr] = true;
+            }
+
+            // Opt-out function
+            function gaOptout() {
+                document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+                window[disableStr] = true;
+            }
+        </script>
+    )
+[end]

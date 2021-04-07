@@ -1,0 +1,62 @@
+config {
+	noPageTitle = 2
+}
+
+page {
+    # use seo title as <title></title>
+	headerData.1 = TEXT
+	headerData.1.field = seo_title
+	headerData.1.noTrimWrap =|<title>|</title>|
+
+    # if seo title empty -> take subtitle/title and add sitname
+	headerData.1.ifEmpty.field = subtitle // title
+	headerData.1.ifEmpty.noTrimWrap =|| – {siteLanguage:websiteTitle}|
+	headerData.1.ifEmpty.noTrimWrap.insertData = 1
+}
+
+# show news title instead of page title on detailpages
+[request.getQueryParams()['tx_news_pi1'] && request.getQueryParams()['tx_news_pi1']['news'] > 0 || request.getParsedBody()['tx_news_pi1'] && request.getParsedBody()['tx_news_pi1']['news'] > 0]
+	temp.TITLE_TAG = RECORDS
+	temp.TITLE_TAG {
+		source = {GP:tx_news_pi1|news}
+		source.insertData = 1
+		tables = tx_news_domain_model_news
+		conf {
+			tx_news_domain_model_news >
+			tx_news_domain_model_news = TEXT
+			tx_news_domain_model_news {
+				field = title
+				noTrimWrap = |<title>| – {siteLanguage:websiteTitle}</title>|
+				noTrimWrap.insertData = 1
+			}
+		}
+	}
+	page.headerData {
+		1 >
+		1 = COA
+		1 < temp.TITLE_TAG
+	}
+
+	page {
+		10 {
+	        variables {
+				# get news title for title template (h1-heading)
+				# use value IN_DETAIL_TEMPLATE if h1 is inserted in detail template and should not be rendered in Resources/Private/Extensions/t8_jetpack/Partials/Title.html
+				news_detail_title = RECORDS
+				news_detail_title {
+					source = {GP:tx_news_pi1|news}
+					source.insertData = 1
+					tables = tx_news_domain_model_news
+					conf {
+						tx_news_domain_model_news >
+						tx_news_domain_model_news = TEXT
+						tx_news_domain_model_news {
+							field = title
+							wrap = |
+						}
+					}
+				}
+			}
+		}
+	}
+[END]
