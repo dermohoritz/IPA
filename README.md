@@ -12,6 +12,6 @@ Die Version der Applikation wird durch die Anzahl Funktionen, die im Verlauf der
 - Lightbox für Bilder auf Detailseite
 - Fluid-Templates + CSS für Ausgabe im FE gemäss Designvorgabe
 <hr>
-Die Dokumentation wird zum Einen nach Anzahl vergangener Arbeitstage, zum Anderen nach fertigen (fertig = mehrfach durchgelesen + korrigiert) Kapiteln versioniert. 
+Die Dokumentation wird nach Anzahl vergangener Arbeitstagen versioniert. 
 Beispiel:
-- Fünfter Arbeitstag, Kapitel 7 fertig => V1.5.7
+- Fünfter Arbeitstag => V0.5
